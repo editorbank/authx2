@@ -1,5 +1,9 @@
 #!
 set -x
 source ./project.properties
-docker rm -f $container_name 2>/dev/null
+
+# Удаление контейнеров и образов сделанных проектом
+$docker ps -q -a -f name=$container_name | xargs -r $docker rm -f
+#$docker images -q -f reference=$image_name | xargs -r $docker rmi -f
+
 [ -d ./tmp ] && rm -rf ./tmp
