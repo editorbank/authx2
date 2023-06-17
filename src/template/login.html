@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>${project_name}</title>
-</head>
-<body>
-<h1>${project_name}</h1>
-<form method="post" action="/auth">
-  <p><input type="text" name="username" value="user1"/></p>
-  <p><input type="password" name="password" value="pass1"/></p>
-  <p><input type="submit" /></p>
-</form>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>${project_name}</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+    <script>
+      const MESSAGES={
+        "403": "Требуется аутентификация",
+      };
+      function on_load(){
+        const urlParams = new URLSearchParams(window.location.search);
+        const msgParam = urlParams.get("msg");
+        const msgElement = document.getElementById("msg");
+        if(msgParam && msgElement) {
+          msgElement.innerHTML=MESSAGES[msgParam];
+        }
+
+      }
+
+      function on_send(form){
+        form.username.value=CryptoJS.MD5(form.username.value);
+        form.password.value=CryptoJS.MD5(form.username.value + form.password.value);
+        // alert(form.password.value);
+      }
+    </script>
+  </head>
+  <body onload="on_load()">
+    <h1>${project_name}</h1>
+    <p id="msg" />
+    <form method="GET" action="/login/check" onsubmit="on_send(this)">
+      <p><input type="text" name="username" value="user1"/></p>
+      <p><input type="password" name="password" value="pass1"/></p>
+      <p><input type="submit" /></p>
+    </form>
+  </body>
 </html>
