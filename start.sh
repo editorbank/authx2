@@ -13,6 +13,9 @@ $docker run -d -P --name $container_name \
   -e HELLO_NAME=$container_name \
   -v ./src/nginx.conf:/etc/nginx/nginx.conf \
   -v ./src/http.js:/etc/nginx/http.js \
+  -v ./src/default.a1:/etc/nginx/default.a1 \
+  -v ./src/default.a2:/etc/nginx/default.a2 \
+  -v ./src/favicon.ico:/usr/share/nginx/html/favicon.ico \
   -v ./tmp/index.html:/usr/share/nginx/html/index.html \
   -v ./tmp/login.html:/usr/share/nginx/html/login.html \
   -v ./tmp/closed-index.html:/usr/share/nginx/html/closed-content/index.html \
