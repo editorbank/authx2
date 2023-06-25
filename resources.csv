@@ -1,0 +1,5 @@
+method,uri,resouce_group
+GET,/secret,NOT_VERY_SECRET
+GET,/secret/,NOT_VERY_SECRET
+GET,/secret/index.html,NOT_VERY_SECRET
+GET,/secret/not-for-user1.html,TOP_SECRET

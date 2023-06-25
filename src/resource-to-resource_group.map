@@ -1,8 +1,0 @@
-# Resource Groups. Групировка ресурсов "метод(GET|POST);путь(URI)" в именованную группу.
-# "метод(GET|POST);путь(URI)" "имя_ресурсной группы";
-"GET;/favicon.ico" "public";
-"GET;/secret" "public";
-"GET;/secret/" "public";
-"GET;/secret/index.html" "public";
-"GET;/secret/not-for-user1.html" user2resource;
-
