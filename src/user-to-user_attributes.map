@@ -1,0 +1,5 @@
+# Authorization. Атрибуты пользователя.
+# "Пользователь" "JSON с атрибутами пользователя";
+"user1" '{"user_group":"PUBLICS","branch":"bussines","fio":"Юзер Одинович Фирстов"}';
+"user2" '{"user_group":"POWERS","branch":"bussines","fio":"Юзер Секондович Поверов"}';
+"admin" '{"user_group":"ADMINS","branch":"support","fio":"Админ Админович Админов"}';
