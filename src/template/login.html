@@ -21,9 +21,7 @@
       }
 
       function on_send(form){
-        form.username.value=CryptoJS.MD5(form.username.value);
-        form.password.value=CryptoJS.MD5(form.username.value + form.password.value);
-        // alert(form.password.value);
+        form.pass.value=CryptoJS.MD5(CryptoJS.MD5(form.user.value) + form.pass.value);
       }
     </script>
   </head>
@@ -31,8 +29,8 @@
     <h1>${project_name}</h1>
     <p id="msg" />
     <form method="GET" action="/login" onsubmit="on_send(this)">
-      <p><input type="text" name="username" value="user1"/></p>
-      <p><input type="password" name="password" value="pass1"/></p>
+      <p><input type="text" name="user" value="user1"/></p>
+      <p><input type="password" name="pass" value="pass1"/></p>
       <p><input type="submit" /></p>
     </form>
   </body>

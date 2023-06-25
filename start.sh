@@ -11,10 +11,12 @@ envsubst <./src/template/secret-index.html >./tmp/secret-index.html
 $docker ps -q -a -f name=$container_name | xargs -r $docker rm -f
 $docker run -d -P --name $container_name \
   -v ./src/nginx.conf:/etc/nginx/nginx.conf \
-  -v ./src/authentication.map:/etc/nginx/authentication.map \
-  -v ./src/authorization.map:/etc/nginx/authorization.map \
-  -v ./src/attributes.map:/etc/nginx/attributes.map \
-  -v ./src/resgroups.map:/etc/nginx/resgroups.map \
+  -v ./src/user_pass-to-session.map:/etc/nginx/user_pass-to-session.map \
+  -v ./src/session-to-user.map:/etc/nginx/session-to-user.map \
+  -v ./src/user-to-user_group.map:/etc/nginx/user-to-user_group.map \
+  -v ./src/user-to-user_attributes.map:/etc/nginx/user-to-user_attributes.map \
+  -v ./src/resource-to-resource_group.map:/etc/nginx/resource-to-resource_group.map \
+  -v ./src/right.map:/etc/nginx/right.map \
   -v ./src/favicon.ico:/usr/share/nginx/html/favicon.ico \
   -v ./tmp/index.html:/usr/share/nginx/html/index.html \
   -v ./tmp/login.html:/usr/share/nginx/html/login.html \

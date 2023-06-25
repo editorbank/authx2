@@ -1,0 +1,4 @@
+# Authentication Присвоение пользователю сесионного идентификатора
+"user=user1&pass=769b288bff0716a022e526fc600f9e61" "24c9e15e52afc47c225b757e7bee1f9d769b288bff0716a022e526fc600f9e61";
+"user=user2&pass=bf8e2361c37c65dc842b5ccfa245607c" "7e58d63b60197ceb55a1c487989a3720bf8e2361c37c65dc842b5ccfa245607c";
+"user=admin&pass=86f3059b228c8acf99e69734b6bb32cc" "21232f297a57a5a743894a0e4a801fc386f3059b228c8acf99e69734b6bb32cc";
