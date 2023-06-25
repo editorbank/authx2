@@ -1,0 +1,4 @@
+user,pass,user_group,branch,fio
+user1,769b288bff0716a022e526fc600f9e61,SIMPLE_USER,bussines,Юзер Одинович Фирстов
+user2,bf8e2361c37c65dc842b5ccfa245607c,POWER_USER,bussines,Юзер Секондович Поверов
+admin,86f3059b228c8acf99e69734b6bb32cc,ADMINS,support,Админ Админович Админов
